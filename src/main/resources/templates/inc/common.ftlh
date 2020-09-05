@@ -37,3 +37,35 @@
     </div>
 
 </#macro>
+
+
+<#macro articleList article>
+    <li>
+        <a href="/user/${article.authorId}" class="fly-avatar">
+            <img src="${article.authorAvatar}"
+                 alt="${article.authorName}">
+        </a>
+        <h2>
+            <a class="layui-badge">${article.categoryName}</a>
+            <a href="jie/detail.html">${article.title}</a>
+        </h2>
+        <div class="fly-list-info">
+            <a href="/user/${article.authorId}" link>
+                <cite>${article.authorName}</cite>
+
+            </a>
+            <span>${timeAgo(article.created?date("yyyy-MM-dd"))}</span>
+
+            <span class="fly-list-nums">
+                <i class="iconfont icon-pinglun1" title="回答"></i>${article.commentCount}
+              </span>
+        </div>
+        <div class="fly-list-badge">
+            <!--
+            <span class="layui-badge layui-bg-black">置顶</span>
+            <span class="layui-badge layui-bg-red">精帖</span>
+            -->
+        </div>
+    </li>
+
+</#macro>
