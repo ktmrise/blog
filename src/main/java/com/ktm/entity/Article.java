@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -96,6 +97,7 @@ public class Article implements Serializable {
     /**
      * 最后更新日期
      */
+//    @JsonFormat(pattern = "yyyy-MM-dd")
     LocalDateTime modified;
 
 
