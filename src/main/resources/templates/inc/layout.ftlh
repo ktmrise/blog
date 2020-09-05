@@ -1,4 +1,6 @@
 <#macro layout title>
+
+
     <!DOCTYPE html>
     <html>
     <head>
@@ -17,10 +19,11 @@
 
     <#--头部-->
     <#include "/inc/header.ftlh" />
+
     <#include "/inc/common.ftlh" />
 
 
-    <#nested />
+    <#nested/>
 
     <#include "/inc/footer.ftlh" />
 

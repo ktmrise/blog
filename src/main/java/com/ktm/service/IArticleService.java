@@ -1,9 +1,11 @@
 package com.ktm.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ktm.entity.Article;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.ktm.vo.ArticleVo;
 
 /**
  * <p>
@@ -16,4 +18,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IArticleService extends IService<Article> {
 
     IPage paging(Page page, Long categoryId, Long userId, Integer level, Boolean recommend, String order);
+
+    ArticleVo selectOneArticle(Long id);
 }

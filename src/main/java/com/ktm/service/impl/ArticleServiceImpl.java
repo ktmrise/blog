@@ -39,10 +39,16 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
                 .eq(categoryId != null, "category_id", categoryId).eq(userId != null, "user_id", userId)
                 .eq(level == 0, "level", 0)
                 .gt(level > 0, "level", 0)
-                .orderByDesc(order!=null,order);
-
+                .orderByDesc(order != null, order);
 
 
         return articleMapper.selectArticles(page, wrapper);
+    }
+
+    @Override
+    public ArticleVo selectOneArticle(Long id) {
+
+        QueryWrapper queryWrapper = new QueryWrapper<ArticleVo>().eq("a.id",id);
+        return articleMapper.selectOneArticle(queryWrapper);
     }
 }

@@ -20,4 +20,6 @@ import org.apache.ibatis.annotations.Param;
 public interface ArticleMapper extends BaseMapper<Article> {
 
     IPage<ArticleVo> selectArticles(Page page,@Param(Constants.WRAPPER)  QueryWrapper wrapper);
+
+    ArticleVo selectOneArticle(@Param(Constants.WRAPPER) QueryWrapper<ArticleVo> wrapper);
 }

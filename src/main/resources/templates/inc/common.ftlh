@@ -26,7 +26,7 @@
                         //首次不执行
                         if(!first){
                             //do something
-                            location.href = 'http://localhost:8080/index?current=' + this.curr;
+                            location.href = "?current=" + obj.curr;
                         }
                     }
                 });
@@ -47,7 +47,7 @@
         </a>
         <h2>
             <a class="layui-badge">${article.categoryName}</a>
-            <a href="jie/detail.html">${article.title}</a>
+            <a href="/detail/${article.id}">${article.title}</a>
         </h2>
         <div class="fly-list-info">
             <a href="/user/${article.authorId}" link>
@@ -61,10 +61,8 @@
               </span>
         </div>
         <div class="fly-list-badge">
-            <!--
-            <span class="layui-badge layui-bg-black">置顶</span>
-            <span class="layui-badge layui-bg-red">精帖</span>
-            -->
+            <#if article.level gt 0> <span class="layui-badge layui-bg-black">置顶</span></#if>
+            <#if article.recommend>   <span class="layui-badge layui-bg-red">精帖</span></#if>
         </div>
     </li>
 
